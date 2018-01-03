@@ -2141,8 +2141,9 @@ var HTML5History = (function (History$$1) {
     History$$1.call(this, router, base);
 
     var expectScroll = router.options.scrollBehavior;
-
-    if (expectScroll) {
+	var supportsScroll = supportsPushState && expectScroll;
+	
+    if (supportsScroll) {
       setupScroll();
     }
 
